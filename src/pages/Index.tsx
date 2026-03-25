@@ -2,7 +2,7 @@ import { useState, useEffect, useMemo, useRef } from "react";
 import { useSearchParams } from "react-router-dom";
 import { ShieldCheck, Clock, Star, Heart, AlertTriangle, Baby, Brain, Utensils, Puzzle, Search, X, ChevronLeft, ChevronRight } from "lucide-react";
 import heroImg from "@/assets/hero-maternity.jpg";
-import ebookTdah from "@/assets/ebook-tdah.jpg";
+import ebookTdah from "@/assets/ebookTdah.png";
 import ebookSono from "@/assets/mestresdosoninho.png";
 import ebookAlimentar from "@/assets/introducaoalimentar.png";
 import ebookAutismo from "@/assets/ebook-autismo.jpg";
@@ -12,6 +12,7 @@ import ebookBrincadeiras    from "@/assets/brincadeira.png";
 import ebookMaeSaudavel    from "@/assets/maesaudavel.png";
 import ebookEducacaoEspecial from "@/assets/educacaoespecial.png";
 import ebookTelas from "@/assets/ebooktelas.png"; 
+import ebookBirra from "@/assets/ebookBirra.png"; 
 
 // Definição de interface para corrigir o erro de lint (no-explicit-any)
 interface Ebook {
@@ -32,6 +33,38 @@ interface Ebook {
 }
 
 const ebooks: Ebook[] = [
+  {
+  id: 9,
+  title: "Diga Adeus à Birra",
+  description: "Aprenda como lidar com birras e mau comportamento de forma firme",
+  oldPrice: "R$ 197,00",
+  price: "9x de R$ 9,19",
+  fullPrice: "ou R$ 69,97 à vista",
+  rating: 4.9,
+  reviews: 1200,
+  image: ebookBirra,
+  badge: "ALTA CONVERSÃO",
+  badgeColor: "bg-highlight text-highlight-foreground",
+  icon: AlertTriangle,
+  link: "https://go.hotmart.com/W105065401A",
+  benefits: ["Menos birra", "Mais obediência", "Sem gritos"],
+  },
+  {
+  id: 10,
+  title: "Compreendendo o TDAH",
+  description: "Entenda o comportamento da criança e aplique estratégias práticas",
+  oldPrice: "R$ 197,00",
+  price: "12x de R$ 10,03",
+  fullPrice: "ou R$ 97,00 à vista",
+  rating: 4.8,
+  reviews: 950,
+  image: ebookTdah,
+  badge: "GUIA COMPLETO",
+  badgeColor: "bg-highlight text-highlight-foreground",
+  icon: Brain,
+  link: "https://go.hotmart.com/U105065781F",
+  benefits: ["Mais foco", "Rotina organizada", "Estratégias práticas"],
+  },
   {
     id: 5,
     title: "Método Mestres do Soninho",
