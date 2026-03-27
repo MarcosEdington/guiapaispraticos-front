@@ -34,6 +34,54 @@ interface Ebook {
 
 const ebooks: Ebook[] = [
   {
+    id: 7,
+    title: "Impacto das Telas no Desenvolvimento Infantil",
+    description: "Descubra como o uso de telas afeta seu filho e aprenda a criar hábitos mais saudáveis no dia a dia.",
+    oldPrice: "R$ 127,00",
+    price: "R$ 69,00",
+    fullPrice: "à vista",
+    rating: 4.8,
+    reviews: 890,
+    image: ebookTelas,
+    badge: "ALERTA PARA PAIS",
+    badgeColor: "bg-highlight text-highlight-foreground",
+    icon: AlertTriangle,
+    link: "https://go.hotmart.com/K105013621N",
+    benefits: ["Reduz telas", "Melhora o sono", "Mais foco"],
+  },
+   {
+    id: 5,
+    title: "Método Mestres do Soninho",
+    description: "A solução prática e gentil para noites tranquilas. Ensine seu bebê a dormir melhor com técnicas comprovadas.",
+    oldPrice: "R$ 997,00",
+    price: "12x R$ 51,40",
+    fullPrice: "ou R$ 497,00 à vista",
+    rating: 4.9,
+    reviews: 2840,
+    image: ebookSono,
+    badge: "MAIS VENDIDO",
+    badgeColor: "bg-accent",
+    icon: Baby,
+    link: "https://pay.kiwify.com.br/tbIG6xU?afid=wochKERW",
+    benefits: ["Técnicas sem traumas", "Rotina de 0 a 24 meses", "Suporte para dúvidas"],
+  },
+  {
+    id: 3,
+    title: "Método Nutri: Introdução Alimentar",
+    description: "O passo a passo definitivo para a fase mais importante do desenvolvimento do seu bebê.",
+    oldPrice: "R$ 497,00",
+    price: "12x R$ 30,72",
+    fullPrice: "ou R$ 297,00 à vista",
+    rating: 4.9,
+    reviews: 1540,
+    image: ebookAlimentar,
+    badge: "RECOMENDADO",
+    badgeColor: "bg-highlight text-highlight-foreground",
+    icon: Utensils,
+    link: "https://pay.kiwify.com.br/vUHFzA0?afid=yKlVCGBO",
+    benefits: ["Suporte da Nutri", "Linguagem Acessível", "Passo a Passo Prático"],
+  },
+  {
   id: 9,
   title: "Diga Adeus à Birra",
   description: "Aprenda como lidar com birras e mau comportamento de forma firme",
@@ -64,54 +112,6 @@ const ebooks: Ebook[] = [
   icon: Brain,
   link: "https://go.hotmart.com/U105065781F",
   benefits: ["Mais foco", "Rotina organizada", "Estratégias práticas"],
-  },
-  {
-    id: 5,
-    title: "Método Mestres do Soninho",
-    description: "A solução prática e gentil para noites tranquilas. Ensine seu bebê a dormir melhor com técnicas comprovadas.",
-    oldPrice: "R$ 997,00",
-    price: "12x R$ 51,40",
-    fullPrice: "ou R$ 497,00 à vista",
-    rating: 4.9,
-    reviews: 2840,
-    image: ebookSono,
-    badge: "MAIS VENDIDO",
-    badgeColor: "bg-accent",
-    icon: Baby,
-    link: "https://pay.kiwify.com.br/tbIG6xU?afid=wochKERW",
-    benefits: ["Técnicas sem traumas", "Rotina de 0 a 24 meses", "Suporte para dúvidas"],
-  },
-  {
-    id: 7,
-    title: "Impacto das Telas no Desenvolvimento Infantil",
-    description: "Descubra como o uso de telas afeta seu filho e aprenda a criar hábitos mais saudáveis no dia a dia.",
-    oldPrice: "R$ 127,00",
-    price: "R$ 69,00",
-    fullPrice: "à vista",
-    rating: 4.8,
-    reviews: 890,
-    image: ebookTelas,
-    badge: "ALERTA PARA PAIS",
-    badgeColor: "bg-highlight text-highlight-foreground",
-    icon: AlertTriangle,
-    link: "https://go.hotmart.com/K105013621N",
-    benefits: ["Reduz telas", "Melhora o sono", "Mais foco"],
-  },
-  {
-    id: 3,
-    title: "Método Nutri: Introdução Alimentar",
-    description: "O passo a passo definitivo para a fase mais importante do desenvolvimento do seu bebê.",
-    oldPrice: "R$ 497,00",
-    price: "12x R$ 30,72",
-    fullPrice: "ou R$ 297,00 à vista",
-    rating: 4.9,
-    reviews: 1540,
-    image: ebookAlimentar,
-    badge: "RECOMENDADO",
-    badgeColor: "bg-highlight text-highlight-foreground",
-    icon: Utensils,
-    link: "https://pay.kiwify.com.br/vUHFzA0?afid=yKlVCGBO",
-    benefits: ["Suporte da Nutri", "Linguagem Acessível", "Passo a Passo Prático"],
   },
   {
     id: 4,
@@ -558,7 +558,7 @@ export default function Index() {
             <span className="font-display text-lg font-bold text-foreground">Pais & Mães Conectados</span>
           </a>
           
-          <div className="relative flex-1 max-w-xs mx-4">
+          {/* <div className="relative flex-1 max-w-xs mx-4">
             <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground" />
             <input
               type="text"
@@ -575,7 +575,7 @@ export default function Index() {
                 <X className="h-4 w-4" />
               </button>
             )}
-          </div>
+          </div> */}
 
           <div className="hidden md:flex items-center gap-6 text-sm font-medium">
             <a href="#ebooks" className="text-muted-foreground hover:text-primary transition-colors">Nossos Guias</a>
@@ -590,107 +590,20 @@ export default function Index() {
           </a>
         </div>
       </nav>
-
-      {/* Hero */}
-      <section className="bg-hero-gradient py-16 md:py-24">
-        <div className="container grid md:grid-cols-2 gap-10 items-center">
-          <div className="space-y-6 animate-fade-up">
-            <span className="inline-flex items-center gap-1.5 bg-secondary text-secondary-foreground text-xs font-semibold px-3 py-1.5 rounded-full">
-              <Heart className="h-3 w-3" /> Especialista em Maternidade
-            </span>
-            <h1 className="font-display text-4xl md:text-5xl lg:text-6xl font-bold text-foreground leading-tight">
-              Soluções práticas para pais e mães:{" "}
-              <span className="text-gradient-primary">sono, rotina infantil</span>{" "}
-              sem estresse.
-            </h1>
-            <p className="text-lg text-muted-foreground max-w-lg">
-              Guias validados por especialistas que já ajudaram mais de{" "}
-              <strong className="text-foreground">5.000 famílias</strong> a transformarem sua rotina.
-            </p>
-
-            <div className="flex flex-col sm:flex-row gap-3">
-              <a
-                href="#ebooks"
-                className="inline-flex items-center justify-center bg-primary text-primary-foreground font-bold py-3.5 px-8 rounded-lg shadow-cta text-base hover:opacity-90 transition-all"
-              >
-                Ver Guias com Desconto
-              </a>
-              <div className="flex items-center gap-2 text-sm text-muted-foreground">
-                <ShieldCheck className="h-4 w-4 text-primary" />
-                <span>Garantia de 7 dias</span>
-              </div>
-            </div>
-
-            <div className="flex items-center gap-6 pt-2">
-              <div className="flex -space-x-2">
-                {[1, 2, 3, 4].map((i) => (
-                  <div key={i} className="w-8 h-8 rounded-full bg-secondary border-2 border-card flex items-center justify-center text-xs font-bold text-secondary-foreground">
-                    {["AL", "MR", "CS", "PM"][i - 1]}
-                  </div>
-                ))}
-              </div>
-              <div className="text-sm">
-                <div className="flex items-center gap-1">
-                  {[1, 2, 3, 4, 5].map((s) => (
-                    <Star key={s} className="h-3 w-3 fill-highlight text-highlight" />
-                  ))}
-                </div>
-                <span className="text-muted-foreground">+5.000 mães satisfeitas</span>
-              </div>
-            </div>
-          </div>
-
-          <div className="relative animate-fade-up" style={{ animationDelay: "0.2s" }}>
-            <img
-              src={heroImg}
-              alt="Mãe segurando bebê dormindo"
-              className="rounded-2xl shadow-card-hover w-full"
-            />
-            <div className="absolute -bottom-4 -left-4 bg-card rounded-xl p-3 shadow-card-hover border border-border">
-              <div className="flex items-center gap-2">
-                <Clock className="h-4 w-4 text-accent" />
-                <div className="text-xs">
-                  <p className="font-semibold text-foreground">Oferta expira em</p>
-                  <Countdown />
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Trust Bar */}
-      <section className="border-b border-border bg-card py-4">
-        <div className="container flex flex-wrap items-center justify-center gap-6 md:gap-10 text-sm text-muted-foreground">
-          <div className="flex items-center gap-2">
-            <ShieldCheck className="h-5 w-5 text-primary" />
-            <span className="font-medium">Compra 100% Segura</span>
-          </div>
-          <div className="flex items-center gap-2">
-            <Clock className="h-5 w-5 text-primary" />
-            <span className="font-medium">Acesso Imediato</span>
-          </div>
-          <div className="flex items-center gap-2">
-            <Heart className="h-5 w-5 text-primary" />
-            <span className="font-medium">Garantia de 7 Dias</span>
-          </div>
-          <div className="flex items-center gap-2">
-            <Star className="h-5 w-5 text-primary fill-primary" />
-            <span className="font-medium">4.8 Avaliação Média</span>
-          </div>
-        </div>
-      </section>
-
+      
       {/* Ebooks Section */}
       <section id="ebooks" className="py-16 md:py-24">
         <div className="container">
           <div className="text-center max-w-2xl mx-auto mb-12 space-y-3">
-            <span className="text-sm font-semibold text-primary uppercase tracking-wider">Nossos Guias</span>
-            <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground">
-              {searchTerm ? `Resultados para: ${searchTerm}` : "Guias práticos para pais e mães que querem facilitar a rotina e o desenvolvimento dos filhos"}
-            </h2>
             <p className="text-muted-foreground">
-              Conteúdo prático, direto ao ponto e baseado em evidências. Escolha o guia ideal para sua família.
+              Seu filho não larga o celular? 📱
+            </p>
+            <p className="text-gray-600 text-base mb-4">
+              Isso pode estar afetando o sono, comportamento e desenvolvimento.
+            </p>
+
+            <p className="text-gray-600 text-base mb-6">
+              Descubra como reduzir o uso de telas de forma simples e prática 👇
             </p>
           </div>
 

@@ -1,0 +1,119 @@
+{/* Hero */}
+      <section className="bg-hero-gradient py-16 md:py-24">
+        <div className="container grid md:grid-cols-2 gap-10 items-center">
+          <div className="space-y-6 animate-fade-up">
+            <span className="inline-flex items-center gap-1.5 bg-secondary text-secondary-foreground text-xs font-semibold px-3 py-1.5 rounded-full">
+              <Heart className="h-3 w-3" /> Especialista em Maternidade
+            </span>
+            <h1 className="font-display text-4xl md:text-5xl lg:text-6xl font-bold text-foreground leading-tight">
+              Soluções práticas para pais e mães:{" "}
+              <span className="text-gradient-primary">sono, rotina infantil</span>{" "}
+              sem estresse.
+            </h1>
+            <p className="text-lg text-muted-foreground max-w-lg">
+              Guias validados por especialistas que já ajudaram mais de{" "}
+              <strong className="text-foreground">5.000 famílias</strong> a transformarem sua rotina.
+            </p>
+
+            <div className="flex flex-col sm:flex-row gap-3">
+              <a
+                href="#ebooks"
+                className="inline-flex items-center justify-center bg-primary text-primary-foreground font-bold py-3.5 px-8 rounded-lg shadow-cta text-base hover:opacity-90 transition-all"
+              >
+                Ver Guias com Desconto
+              </a>
+              <div className="flex items-center gap-2 text-sm text-muted-foreground">
+                <ShieldCheck className="h-4 w-4 text-primary" />
+                <span>Garantia de 7 dias</span>
+              </div>
+            </div>
+
+            <div className="flex items-center gap-6 pt-2">
+              <div className="flex -space-x-2">
+                {[1, 2, 3, 4].map((i) => (
+                  <div key={i} className="w-8 h-8 rounded-full bg-secondary border-2 border-card flex items-center justify-center text-xs font-bold text-secondary-foreground">
+                    {["AL", "MR", "CS", "PM"][i - 1]}
+                  </div>
+                ))}
+              </div>
+              <div className="text-sm">
+                <div className="flex items-center gap-1">
+                  {[1, 2, 3, 4, 5].map((s) => (
+                    <Star key={s} className="h-3 w-3 fill-highlight text-highlight" />
+                  ))}
+                </div>
+                <span className="text-muted-foreground">+5.000 mães satisfeitas</span>
+              </div>
+            </div>
+          </div>
+
+          <div className="relative animate-fade-up" style={{ animationDelay: "0.2s" }}>
+            <img
+              src={heroImg}
+              alt="Mãe segurando bebê dormindo"
+              className="rounded-2xl shadow-card-hover w-full"
+            />
+            <div className="absolute -bottom-4 -left-4 bg-card rounded-xl p-3 shadow-card-hover border border-border">
+              <div className="flex items-center gap-2">
+                <Clock className="h-4 w-4 text-accent" />
+                <div className="text-xs">
+                  <p className="font-semibold text-foreground">Oferta expira em</p>
+                  <Countdown />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+{/* Trust Bar */}
+      <section className="border-b border-border bg-card py-4">
+        <div className="container flex flex-wrap items-center justify-center gap-6 md:gap-10 text-sm text-muted-foreground">
+          <div className="flex items-center gap-2">
+            <ShieldCheck className="h-5 w-5 text-primary" />
+            <span className="font-medium">Compra 100% Segura</span>
+          </div>
+          <div className="flex items-center gap-2">
+            <Clock className="h-5 w-5 text-primary" />
+            <span className="font-medium">Acesso Imediato</span>
+          </div>
+          <div className="flex items-center gap-2">
+            <Heart className="h-5 w-5 text-primary" />
+            <span className="font-medium">Garantia de 7 Dias</span>
+          </div>
+          <div className="flex items-center gap-2">
+            <Star className="h-5 w-5 text-primary fill-primary" />
+            <span className="font-medium">4.8 Avaliação Média</span>
+          </div>
+        </div>
+      </section>
+
+
+
+{/* Ebooks Section */}
+      <section id="ebooks" className="py-16 md:py-24">
+        <div className="container">
+          <div className="text-center max-w-2xl mx-auto mb-12 space-y-3">
+            <span className="text-sm font-semibold text-primary uppercase tracking-wider">Nossos Guias</span>
+            <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground">
+              {searchTerm ? `Resultados para: ${searchTerm}` : "Guias práticos para pais e mães que querem facilitar a rotina e o desenvolvimento dos filhos"}
+            </h2>
+            <p className="text-muted-foreground">
+              Conteúdo prático, direto ao ponto e baseado em evidências. Escolha o guia ideal para sua família.
+            </p>
+          </div>
+
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 items-stretch">
+            {filteredEbooks.length > 0 ? (
+              filteredEbooks.map((ebook) => (
+                <EbookCard key={ebook.id} ebook={ebook} />
+              ))
+            ) : (
+              <div className="col-span-full text-center py-10">
+                <p className="text-muted-foreground">Nenhum ebook encontrado para sua busca.</p>
+                <button onClick={() => setSearchTerm("")} className="text-primary font-bold mt-2 underline">Mostrar todos os guias</button>
+              </div>
+            )}
+          </div>
+        </div>
+      </section>
