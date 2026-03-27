@@ -462,7 +462,7 @@ function EbookCard({ ebook }: { ebook: Ebook }) {
           rel="noopener noreferrer"
           className="block w-full text-center bg-primary text-primary-foreground font-extrabold py-3.5 rounded-lg shadow-cta transition-all duration-300 hover:opacity-95 hover:scale-[1.02] active:scale-[0.98] uppercase text-sm tracking-wider"
         >
-          Garantir meu acesso agora
+          ACESSAR O GUIA AGORA
         </a>
 
         {/* Garantia Rodapé */}
@@ -555,7 +555,7 @@ export default function Index() {
         <div className="container flex items-center justify-between py-3">
           <a href="#" className="flex items-center gap-2">
             <Heart className="h-6 w-6 text-primary fill-primary" />
-            <span className="font-display text-lg font-bold text-foreground">Pais & Mães Conectados</span>
+            <span className="font-display text-lg font-bold text-foreground">Guia Pais Práticos</span>
           </a>
           
           {/* <div className="relative flex-1 max-w-xs mx-4">
@@ -577,7 +577,7 @@ export default function Index() {
             )}
           </div> */}
 
-          <div className="hidden md:flex items-center gap-6 text-sm font-medium">
+          {/* <div className="hidden md:flex items-center gap-6 text-sm font-medium">
             <a href="#ebooks" className="text-muted-foreground hover:text-primary transition-colors">Nossos Guias</a>
             <a href="#depoimentos" className="text-muted-foreground hover:text-primary transition-colors">Resultados</a>
             <a href="#faq" className="text-muted-foreground hover:text-primary transition-colors">Dúvidas</a>
@@ -587,7 +587,7 @@ export default function Index() {
             className="bg-primary text-primary-foreground text-sm font-bold px-4 py-2 rounded-lg shadow-cta hover:opacity-90 transition-all"
           >
             Ver Ofertas
-          </a>
+          </a> */}
         </div>
       </nav>
       
@@ -708,7 +708,7 @@ export default function Index() {
         <div className="container text-center space-y-4">
           <div className="flex items-center justify-center gap-2">
             <Heart className="h-5 w-5 text-primary fill-primary" />
-            <span className="font-display text-lg font-bold">Pais & Mães Conectados</span>
+            <span className="font-display text-lg font-bold">Guia Pais Praticos</span>
           </div>
           <p className="text-sm opacity-70 max-w-md mx-auto">
             Guias práticos para pais que querem facilitar a rotina e o desenvolvimento dos filhos.
@@ -723,20 +723,20 @@ export default function Index() {
             <span className="flex items-center gap-1"><Clock className="h-3 w-3" /> Acesso Imediato</span>
           </div>
           <p className="text-xs opacity-40 pt-4">
-            © {new Date().getFullYear()} Pais & Mães Conectados. Todos os direitos reservados.
+            © {new Date().getFullYear()} Guia Pais Praticos. Todos os direitos reservados.
           </p>
         </div>
       </footer>
 
       {/* Mobile Sticky CTA */}
-      <div className="fixed bottom-0 left-0 right-0 z-40 bg-card/95 backdrop-blur-md border-t border-border p-3 md:hidden">
+      {/* <div className="fixed bottom-0 left-0 right-0 z-40 bg-card/95 backdrop-blur-md border-t border-border p-3 md:hidden">
         <a
           href="#ebooks"
           className="block w-full text-center bg-primary text-primary-foreground font-bold py-3 rounded-lg shadow-cta"
         >
           🔥 Ver Ofertas com Desconto
         </a>
-      </div>
+      </div> */}
     </div>
   );
 }
